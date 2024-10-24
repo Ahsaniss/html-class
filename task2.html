@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divs with Buttons</title>
+    <style>
+        
+        /* General styling for divs */
+        .container div {
+            border: 2px solid black;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* Assign different background colors to each div */
+        #div1 { background-color: lightblue; }
+        #div2 { background-color: lightgreen; }
+        #div3 { background-color: lightpink; }
+        #div4 { background-color: lightcoral; }
+        #div5 { background-color: lightgoldenrodyellow; }
+        #div6 { background-color: lightgray; }
+        #div7 { background-color: lightseagreen; }
+        #div8 { background-color: lightsteelblue; }
+        #div9 { background-color: lightyellow; }
+
+        /* Buttons styling */
+        button {
+            margin: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #btn1 { background-color: orange; }
+        #btn2 { background-color: red; color: white; }
+        #btn3 { background-color: green; color: white; }
+        #btn4 { background-color: blue; color: white; }
+        #btn5 { background-color: purple; color: white; }
+    </style>
+</head>
+<body>
+
+    <!--9 divs with unique ids for h1 and p -->
+    <div class="container">
+        <div id="div1">
+            <h1 id="heading1">New York</h1>
+            <p id="para1">New York, known as the Big Apple, is famous for its skyline and diverse culture.</p>
+        </div>
+        <div id="div2">
+            <h1 id="heading2">Lahore </h1>
+            <p id="para2">It is home to iconic landmarks such as the Statue of Liberty and Central Park.</p>
+        </div>
+        <div id="div3">
+            <h1 id="heading3">Karachi</h1>
+            <p id="para3">The city never sleeps, with bustling streets and a vibrant nightlife.</p>
+        </div>
+        <div id="div4">
+            <h1 id="heading4">London</h1>
+            <p id="para4">Broadway shows and cultural events attract millions of tourists each year.</p>
+        </div>
+        <div id="div5">
+            <h1 id="heading5">sialkot</h1>
+            <p id="para5">The city is known for its world-class museums, including the Metropolitan Museum of Art.</p>
+        </div>
+        <div id="div6">
+            <h1 id="heading6">isalamabad</h1>
+            <p id="para6">New York has a rich history, being one of the oldest cities in the United States.</p>
+        </div>
+        <div id="div7">
+            <h1 id="heading7">Uk</h1>
+            <p id="para7">It is a melting pot of cultures, offering a wide range of cuisines and experiences.</p>
+        </div>
+        <div id="div8">
+            <h1 id="heading8">England</h1>
+            <p id="para8">The skyline is dominated by skyscrapers like the Empire State Building.</p>
+        </div>
+        <div id="div9">
+            <h1 id="heading9">America</h1>
+            <p id="para9">New York City is divided into five boroughs: Manhattan, Brooklyn, Queens, The Bronx, and Staten Island.</p>
+        </div>
+    </div>
+
+    <!-- Buttons -->
+    <button id="btn1">Change Color</button>
+    <button id="btn2">Hide Divs</button>
+    <button id="btn3">Show Divs</button>
+    <button id="btn4">Change Text</button>
+    <button id="btn5">Reset All</button>
+
+    <script>
+        // Change the color of all divs
+        document.getElementById('btn1').addEventListener('click', function() {
+            const divs = document.querySelectorAll('.container div');
+            divs.forEach(div => {
+                div.style.backgroundColor = getRandomColor();
+            });
+        });
+
+        // Hide all divs
+        document.getElementById('btn2').addEventListener('click', function() {
+            const divs = document.querySelectorAll('.container div');
+            divs.forEach(div => {
+                div.style.display = 'none';
+            });
+        });
+
+        // Show all divs
+        document.getElementById('btn3').addEventListener('click', function() {
+            const divs = document.querySelectorAll('.container div');
+            divs.forEach(div => {
+                div.style.display = 'block';
+            });
+        });
+
+        // Change text of all h1 and paragraphs
+        document.getElementById('btn4').addEventListener('click', function() {
+            for (let i = 1; i <= 9; i++) {
+                document.getElementById(`heading${i}`).innerText = `the taxt is change ${i}`;
+                document.getElementById(`para${i}`).innerText = `change text ${i}.`;
+            }
+        });
+
+        // Reset all changes
+        document.getElementById('btn5').addEventListener('click', function() {
+            window.location.reload();
+        });
+
+        // Function to get a random color
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>

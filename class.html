@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.city {
+  background-color: tomato;
+  color: rgb(0, 0, 0);
+  border: 2px solid black;
+  margin: 20px;
+  padding: 20px;
+}
+#myHeader {
+  background-color: lightblue;
+  color: black;
+  padding: 40px;
+  text-align: center;
+} 
+/* CSS for alert and text elements */
+.alert, .text {
+      padding: 10px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+
+    .alert {
+      background-color: #f44336;
+      color: white;
+    }
+
+    .text {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    /* Class to hide elements */
+    .hidden {
+      display: none;
+    }
+</style>
+</head>
+<body>
+
+<div class="city">
+<h2>London</h2>
+<p style="background-color: aquamarine;">London is the capital of England.</p>
+</div> 
+
+<div class="city">
+<h2>Paris</h2>
+<p style="background-color: aquamarine;">Paris is the capital of France.</p>
+</div>
+
+<div class="city">
+<h2>Tokyo</h2>
+<p style="background-color: aquamarine;">Tokyo is the capital of Japan.</p>
+</div>
+
+  <!-- Alert box -->
+  <div class="alert" id="alertBox">
+    This is an alert message!
+  </div>
+
+  <!-- Text box -->
+  <div class="text" id="textBox">
+    This is a hidden text message.
+  </div>
+
+  <!-- Buttons to toggle visibility -->
+  <button onclick="toggleAlert()">Hide Alert</button>
+  <button onclick="toggleText()">Hide Text</button>
+
+  <script>
+    // JavaScript to toggle the alert visibility
+    function toggleAlert() {
+      const alertBox = document.getElementById('alertBox');
+      alertBox.classList.toggle('hidden');
+    }
+
+    // JavaScript to toggle the text visibility
+    function toggleText() {
+      const textBox = document.getElementById('textBox');
+      textBox.classList.toggle('hidden');
+    }
+  </script>
+<h2>Use of The class Attribute in JavaScript</h2>
+<p>Click the button to hide all elements with class name "city":</p>
+
+<button onclick="myFunction()">Hide elements</button>
+
+
+
+<script>
+function myFunction() {
+  var x = document.getElementsByClassName("city");
+  for (var i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+}
+</script>
+<!--
+id attribute is unique atendifier 
+no other element on the page should share the same id
+the id can be used to upply the css style 
+target the element in js
+
+-->
+<h2>The id Attribute</h2>
+<p>Use CSS to style an element with the id "myHeader":</p>
+
+
+<body>
+
+  <h2>Using The id Attribute in JavaScript</h2>
+  <p>JavaScript can access an element with a specified id by using the getElementById() method:</p>
+  
+  <h1 id="myHeader">Hello World!</h1>
+  <button onclick="displayResult()">Change text</button>
+  
+  <script>
+  function displayResult() {
+    document.getElementById("myHeader").innerHTML = "Have a nice day!";
+  }
+  </script>
+</body>
+</html>
+
