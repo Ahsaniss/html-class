@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/action_page.php" method="get">
+        <!--
+        this label describe the input field below it
+        for attribute link the label to input field with the id of input field 
+        make the label clickable and accessible
+         -->
+        <label for="fname">First name:</label>
+        <!-- this define the text input field where the user can enter their first name ...text specify that this is input field .. which is referenced by the label  the name attribute describe an input field which is use when submitting the form and sending the data with f name this use for b default value which is can be change the user   -->
+         <!--
+        action  atribute specify that when form is submit when data send to specify page
+        -->
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="Submit">
+      </form>
+      <h2>HTML Forms</h2>
+
+<form action="/action_page.php">
+   
+
+    
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+
+<h2>The method Attribute</h2>
+
+<p>This form will be submitted using the GET method:</p>
+
+<form action="/action_page.php" target="_blank" method="get">
+     <!--targert blank specify that form submission will open in new browser
+    set the http method  to get which opend the form from data as url url parameters in the 
+    it is n use for non sensitive data
+    use the post method to submit the from data. this is send the data or data send data to the body
+    this keeps hiden from adress bar 
+    this keep the data hiden from the adress bar 
+    its making more suitable for sensitive data 
+    -->
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<p>After you submit, notice that the form values is visible in the address bar of the new browser tab.</p>
+</body>
+</html>
